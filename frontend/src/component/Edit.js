@@ -9,9 +9,13 @@ export default function Edit() {
     
     const [inputdata,setInputdata]=useState({
         "name":"",
-        "address":"",
-        "subject":"",
-        "contact":""
+        "email":"",
+        "location":"",
+        "contact":"",
+        "startDate":"",
+        "endDate":"",
+        "school":"",
+        "docuLink":""
     })
     
     //onchange function
@@ -55,14 +59,14 @@ export default function Edit() {
     const updatestud= async(e)=>{
         e.preventDefault();
 
-        const {name, address, subject, contact} =inputdata;
+        const {name, email, location, contact, startDate, endDate, school, docuLink} =inputdata;
         const res2 = await fetch(`http://localhost:5000/updatestud/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name,address, subject, contact
+                name,email, location, contact, startDate, endDate, school, docuLink
             })
         });
         const data2= await res2.json();
@@ -89,24 +93,44 @@ export default function Edit() {
             <div className='underline1'></div>
             <form className='mt-5 shadow p-5 w-75'>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Student Name</label>
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Student Name" 
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Name" 
                     onChange={setstud} name="name" value={inputdata.name}/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Student Address</label>
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Student Address"
-                    onChange={setstud} name="address" value={inputdata.address}/>
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Email Address</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Email Address"
+                    onChange={setstud} name="email" value={inputdata.email}/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Student Subject</label>
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Subject Name" 
-                    onChange={setstud} name="subject" value={inputdata.subject}/>
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Location</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Location" 
+                    onChange={setstud} name="location" value={inputdata.location}/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Student Mobile</label>
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Contact Number</label>
                     <input type="number" className="form-control" id="exampleFormControlInput1" placeholder="Enter Contact Number"
                     onChange={setstud} name="contact" value={inputdata.contact}/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Start Date</label>
+                    <input type="date" className="form-control" id="exampleFormControlInput1" placeholder="Enter Start Date"
+                    onChange={setstud} name="startDate" value={inputdata.startDate}/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">End Date</label>
+                    <input type="date" className="form-control" id="exampleFormControlInput1" placeholder="Enter End Date"
+                    onChange={setstud} name="endDate" value={inputdata.endDate}/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">School</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter School"
+                    onChange={setstud} name="school" value={inputdata.school}/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Document Link</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Document Link"
+                    onChange={setstud} name="docuLink" value={inputdata.docuLink}/>
                 </div>
                 <div className='d-flex'>
                          <button className='btn btn-primary' onClick={updatestud}>update Student</button>

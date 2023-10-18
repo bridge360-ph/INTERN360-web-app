@@ -2,6 +2,8 @@ import React,{useEffect,useState} from 'react'
 import { Link, useParams } from 'react-router-dom';
 export default function View() {
 
+    
+
     const [getstud, SetGetstud] = useState([]);
 
     const { id } = useParams("");
@@ -31,14 +33,18 @@ export default function View() {
 
     return (
         <div className='container mt-5'>
-             <h4>All Student Information</h4>
+             <h4>All Interns Information</h4>
             <div className='underline'></div>
             <ul className="list-group w-50 mt-4">
                 <li className="list-group-item active" aria-current="true">All Information About</li>
-                <li className="list-group-item">Student Name:- {getstud.name}</li>
-                <li className="list-group-item">Student Address:-  {getstud.address}</li>
-                <li className="list-group-item">Student Subject:-  {getstud.subject}</li>
-                <li className="list-group-item">Student Mobile:-  {getstud.contact}</li>
+                <li className="list-group-item">Name:- {getstud.name}</li>
+                <li className="list-group-item">Email Address:-  {getstud.email}</li>
+                <li className="list-group-item">Location:-  {getstud.location}</li>
+                <li className="list-group-item">Mobile:-  {getstud.contact}</li>
+                <li className="list-group-item">Start Date:-  {getstud.startDate}</li>
+                <li className="list-group-item">End Date:-  {getstud.endDate}</li>
+                <li className="list-group-item">School:-  {getstud.school}</li>
+                <li className="list-group-item">Document Link:-  {getstud.docuLink}</li>
             </ul>
             <Link className='btn btn-primary mt-5' to="/allstud">Back</Link>
         </div>

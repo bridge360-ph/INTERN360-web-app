@@ -1,31 +1,42 @@
-const express=require("express");
+
+const express = require("express");
 const router = express.Router();
-const students=require("../models/studSchema");
+const students = require("../models/studSchema");
 
+// send data post method
+router.post("/addstud", async (req, res) => {
+  const { name, email, location, contact, startDate, endDate, school, docuLink } = req.body;
 
-//send data post method
-router.post("/addstud",async(req,res)=>{
-    const {name,address,subject,contact}=req.body;
+  if (!name || !email || !contact || !startDate || !endDate || !school || !docuLink) {
+    return res.status(422).json({ error: "Please fill up all the required fields" });
+  }
 
-    if(!name || !address || !subject || !contact){
-        res.status(422).json("Please fillup the Data")
+  try {
+    const prestud = await students.findOne({ contact });
+
+    if (prestud) {
+      return res.status(422).json({ error: "This intern is already Present" });
+    } else {
+      const addstudent = new students({
+        name,
+        email,
+        location,
+        contact,
+        startDate,
+        endDate,
+        school,
+        docuLink,
+      });
+      await addstudent.save();
+      return res.status(201).json(addstudent);
     }
-
-    try{
-        const prestud=await students.findOne({contact:contact});
-
-        if(prestud){
-            res.status(422).json("This student already Present")
-
-        }else{
-            const addstudent =new students ({name,address,subject,contact});
-            await addstudent.save();
-            res.status(201).json(addstudent)
-        }
-    }catch(err){
-        res.status(422).json(err)
-    }
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 });
+
+
 
 //get student Data
 router.get("/getstud", async(req,res)=>{
@@ -37,7 +48,7 @@ router.get("/getstud", async(req,res)=>{
     }
 })
 
-//get signle student Data
+//get single student Data
 router.get("/getstud/:id", async(req,res)=>{
     try{
        const {id}=req.params;

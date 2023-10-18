@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(router);
 
 // const url="mongodb+srv://admin:4LPZudtJGHHLK2Xx@cluster0.5qu8lrg.mongodb.net/?retryWrites=true&w=majority"
-const url2="mongodb+srv://youtube:admin123@cluster0.g1xfhn1.mongodb.net/?retryWrites=true&w=majority"
+const url2="mongodb+srv://intern360:mapua12345678@cluster0.ckwwqxp.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(url2).then(()=>{
     console.log("Database Connected Succssfully")

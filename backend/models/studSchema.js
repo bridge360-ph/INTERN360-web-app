@@ -1,21 +1,35 @@
-const mongoose= require("mongoose");
+// studSchema.js
+const mongoose = require("mongoose");
+
 const studSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
-    },
-    address:{
-        type:String,
-        required:true
-    },
-    subject:{
-        type:String,
-        required:true
-    },
-    contact:{
-        type:Number,
-        required:true
-    }
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+  },
+  contact: {
+    type: Number,
+    required: true,
+  },
+  startDate: {
+    type: Date,
+  },
+  endDate: {
+    type: Date,
+  },
+  school: {
+    type: String,
+  },
+  docuLink: {
+    type: String
+  },
 });
-const students=new mongoose.model("students",studSchema);
-module.exports=students;
+
+const students = mongoose.model("students", studSchema);
+module.exports = students;

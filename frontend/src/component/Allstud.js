@@ -57,9 +57,9 @@ export default function Allstud() {
     return (
         <div className='container mt-5'>
             <div className='d-flex'>
-                <h4>All Student Information</h4>
+                <h4>All Interns Information</h4>
                 <div class="ms-auto w-50">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search Student" 
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search Intern" 
                         onChange={(e)=>searchStud(e.target.value)}
                     />
                 </div>
@@ -71,9 +71,13 @@ export default function Allstud() {
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Subject</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Location</th>
                         <th scope="col">Contact </th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">School</th>
+                        <th scope="col">Document Link</th>
                         <th scope="col">Action </th>
                     </tr>
                 </thead>
@@ -92,9 +96,13 @@ export default function Allstud() {
                                 <tr key={id}>
                                     <th scope="row">{id + 1}</th>
                                     <td>{result.name}</td>
-                                    <td>{result.address}</td>
-                                    <td>{result.subject}</td>
+                                    <td>{result.email}</td>
+                                    <td>{result.location}</td>
                                     <td>{result.contact}</td>
+                                    <td>{result.startDate}</td>
+                                    <td>{result.endDate}</td>
+                                    <td>{result.school}</td>
+                                    <td>{result.docuLink}</td>
                                     <td>
                                         <Link className='btn btn-success ms-2' to={`/view/${result._id}`}>View</Link>
                                         <Link className='btn btn-warning ms-2' to={`/edit/${result._id}`}>Update</Link>

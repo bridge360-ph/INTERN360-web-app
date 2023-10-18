@@ -133,7 +133,7 @@ export default function Edit() {
                     onChange={setstud} name="docuLink" value={inputdata.docuLink}/>
                 </div>
                 <div className='d-flex'>
-                         <button className='btn btn-primary' onClick={updatestud}>update Student</button>
+                         <button className='btn btn-primary' onClick={updatestud}>Update Intern</button>
                          <ToastContainer />
                          <NavLink className='btn btn-primary ms-auto' to="/allstud">Back to Home</NavLink>
                 </div>

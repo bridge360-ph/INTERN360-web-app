@@ -1,6 +1,7 @@
 # INTERN360-web-app
 The Intern360 is a simple web-based information management system that tracks all of the information of the previous, present, and future interns of Bridge360PH. The system will utilize CRUD as its main functionality, wherein supervisors can create, read, update, and delete an intern's information. The web app is created using MERN stack.
 
+<p align="center">
  How to get started? <br />
  
  Open terminal in vscode <br />
@@ -20,4 +21,4 @@ The Intern360 is a simple web-based information management system that tracks al
 <br />
 *the website should successfully run in the local host*
 
-
+</p>

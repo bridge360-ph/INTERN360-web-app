@@ -12,7 +12,6 @@ The Intern360 is a simple web-based information management system that tracks al
 `npm run build` <br />
 `npm start` <br />
 *database should successfully be created* <br />
-
 <br />
  -In frontend- <br />
  `cd backend` <br />
@@ -20,5 +19,6 @@ The Intern360 is a simple web-based information management system that tracks al
  `npm run build` <br />
 `npm start` <br />
 <br />
+
 *the website should successfully run in the local host*
 

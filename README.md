@@ -3,20 +3,20 @@ The Intern360 is a simple web-based information management system that tracks al
 
 How to get started?
 
-git clone this repository
-Open terminal in vscode
--In backend-
-`cd frontend`
-`npm install`
-`npm run build`
-`npm start`
-*database should successfully be created*
+git clone this repository <pre>
+Open terminal in vscode <pre>
+-In backend- <pre>
+`cd frontend` <pre>
+`npm install` <pre>
+`npm run build` <pre>
+`npm start` <pre>
+*database should successfully be created* <pre>
 
--In frontend-
-`cd backend`
-`npm install`
-`npm run build`
-`npm start`
+-In frontend- <pre>
+`cd backend` <pre>
+`npm install` <pre>
+`npm run build` <pre>
+`npm start` <pre>
 
 *the website should successfully run in the local host*
 
